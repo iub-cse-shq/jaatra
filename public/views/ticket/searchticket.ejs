@@ -35,8 +35,31 @@
              <label for="example-date-input"> Date</label>
   <input class="form-control" type="date" value="2018-04-14" id="example-date-input">
   <br>
+  
+          
              
            <!--datepicker  -->
+           
+          <!-- Filter Button -->
+          <br>
+          
+          <!-- <div class="container"> -->
+            <div class="row">
+              <div class="col-sm-3">
+                <label> Filter</label>
+                  <select class="form-control" id="filter">
+                    <option value="nofilter" id="nofilter">NO FILTER SELECTED</option>
+                    <option value="price" id="price">PRICE</option>
+                    <option value="capacity" id="capacity">No. of SEATS</option>
+                  </select>
+              </div>
+              <div class="col-sm-9">
+                <label>Enter Number</label>
+                <input class="form-control" id="inputnum" placeholder="ENTER VALUE">
+              </div>
+            </div>
+           <!-- </div> -->
+          <!-- Filter Button -->
             
           </br>
           <button type="button" class="btn btn-success" id="search">Search</button>
@@ -54,7 +77,10 @@
  <% include ../common/footer.ejs %>
 
 <script>
-  $("#search").click(function(){
+    $("#search").click(function(){
+      if($('#filter').val() == $('#nofilter').val()){
+   //var price = $('#price').val();
+   //var capacity = $('#capacity').val();
    var pickup= $('#source').val();
    var destination= $('#destination').val();
    var query = "pickup="+pickup+"&destination="+destination;
@@ -62,7 +88,34 @@
       var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
     $("#list").html(html);
     });
-  });
+    
+      }else if($('#filter').val() == $('#price').val()){
+        
+        var price = $('#price').val();
+        var inputnum = $('#inputnum').val();
+        var query = "ticketPrice="+price+"&destination="+destination;
+          $.get("/api/tickets?"+query, function(data, status){
+            var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
+          $("#list").html(html);
+          });
+          
+          console.log('You have selected PRICE!');
+          
+      }else if($('#filter').val() == $('#capacity').val()){
+        console.log('You have selected No. of SEATS!');
+        
+        
+      }else{
+        console.log('SELECT NO FILTER TO SEE FULL LIST!');
+      }
+    
+    //var query1 = "price="+price+""
+    
+    });
+  
+
+
+  
   </script>
 
 
