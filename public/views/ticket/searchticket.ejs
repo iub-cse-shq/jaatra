@@ -1,6 +1,7 @@
 
 		<% include ../common/header.ejs %>
 		
+      
       <div class= "container">
         
           <form id = ticketForm>
@@ -13,7 +14,7 @@
                   <option value="Jashore">Jashore</option>
                   <option value="Rajshahi">Rajshahi</option>
                   <option value="Rangamati">Rangamati</option>
-                  
+                 
                   
                   <option value="Cox's Bazar">Cox's Bazar</option>
               </select>
@@ -46,16 +47,26 @@
           <!-- <div class="container"> -->
             <div class="row">
               <div class="col-sm-3">
-                <label> Filter</label>
+                <label>Filter</label>
                   <select class="form-control" id="filter">
                     <option value="nofilter" id="nofilter">NO FILTER SELECTED</option>
                     <option value="price" id="price">PRICE</option>
                     <option value="capacity" id="capacity">No. of SEATS</option>
                   </select>
               </div>
-              <div class="col-sm-9">
+              
+              <div class="col-sm-3">
+                <label>Choose</label>
+                <select class="form-control" id="operator">
+                  <option value="equal" id="equal">Equal to =</option>
+                  <option value="greater" id="greater">Greater Than ></option>
+                  <option value="smaller" id="smaller">Smaller Than <</option>
+                </select>
+              </div>
+              
+              <div class="col-sm-6">
                 <label>Enter Number</label>
-                <input class="form-control" id="inputnum" placeholder="ENTER VALUE">
+                <input type="number" class="form-control" value="ticketPrice" id="ticketPrice" placeholder="ENTER VALUE">
               </div>
             </div>
            <!-- </div> -->
@@ -81,6 +92,9 @@
       if($('#filter').val() == $('#nofilter').val()){
    //var price = $('#price').val();
    //var capacity = $('#capacity').val();
+   //var ticketPrice = $('#ticketPrice').val();
+   
+   //var ticketPrice = "{$lt: "+75+"}";
    var pickup= $('#source').val();
    var destination= $('#destination').val();
    var query = "pickup="+pickup+"&destination="+destination;
@@ -89,19 +103,70 @@
     $("#list").html(html);
     });
     
-      }else if($('#filter').val() == $('#price').val()){
+      }else if($('#filter').val() == $('#price').val() && $('#operator').val() == $('#smaller').val()){
         
         var price = $('#price').val();
-        var inputnum = $('#inputnum').val();
-        var query = "ticketPrice="+price+"&destination="+destination;
-          $.get("/api/tickets?"+query, function(data, status){
+        //var ticketPrice = $('#ticketPrice').val();
+       
+        var pickup= $('#source').val();
+        var destination= $('#destination').val();
+        var ticketPrice = $('#ticketPrice').val();
+        var query = "pickup="+pickup+"&destination="+destination+"&ticketPrice="+ticketPrice;
+          $.get("/api/filterList?"+query, function(data, status){
             var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
           $("#list").html(html);
           });
           
           console.log('You have selected PRICE!');
           
-      }else if($('#filter').val() == $('#capacity').val()){
+      }else if($('#filter').val() == $('#price').val() && $('#operator').val() == $('#greater').val()){
+        
+        var price = $('#price').val();
+        //var ticketPrice = $('#ticketPrice').val();
+       
+        var pickup= $('#source').val();
+        var destination= $('#destination').val();
+        var ticketPrice = $('#ticketPrice').val();
+        var query = "pickup="+pickup+"&destination="+destination+"&ticketPrice="+ticketPrice;
+          $.get("/api/filterLista?"+query, function(data, status){
+            var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
+          $("#list").html(html);
+          });
+          
+          console.log('You have selected PRICE!');
+        
+      
+      }else if($('#filter').val() == $('#price').val() && $('#operator').val() == $('#equal').val()){
+        
+        var price = $('#price').val();
+        //var ticketPrice = $('#ticketPrice').val();
+       
+        var pickup= $('#source').val();
+        var destination= $('#destination').val();
+        var ticketPrice = $('#ticketPrice').val();
+        var query = "pickup="+pickup+"&destination="+destination+"&ticketPrice="+ticketPrice;
+          $.get("/api/filterListb?"+query, function(data, status){
+            var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
+          $("#list").html(html);
+          });
+          
+          console.log('You have selected PRICE!');
+        
+      
+      }else if($('#filter').val() == $('#capacity').val() &&  $('#operator').val() == $('#smaller').val()){
+        
+        var price = $('#price').val();
+        //var ticketPrice = $('#ticketPrice').val();
+       
+        var pickup= $('#source').val();
+        var destination= $('#destination').val();
+        var ticketPrice = $('#ticketPrice').val();
+        var query = "pickup="+pickup+"&destination="+destination+"&capacity="+ticketPrice;
+          $.get("/api/busList?"+query, function(data, status){
+            var html = new EJS({url: '/views/ticket/ticketList.ejs'}).render({tickets:data});
+          $("#list").html(html);
+          });
+        
         console.log('You have selected No. of SEATS!');
         
         
@@ -124,5 +189,4 @@
  
 
 	</body>
-
 </html>

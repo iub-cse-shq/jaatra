@@ -202,7 +202,7 @@
             </div>
             <div class="col-sm-6" >
                </br>
-               <a href="/tickets/success" class="btn btn-primary btn-lg btn-block">Pay</a>
+               <a href="/tickets/success" class="btn btn-primary btn-lg btn-block" id="pay">Pay</a>
             </div>
           </div>
       </div>
@@ -234,6 +234,18 @@
       console.log(qty);
       document.getElementById('ticketTotal').innerHTML = <%=ticket.ticketPrice%>* qty + 20 ;
 });
+  </script>
+  <script> 
+  $("#pay").click(function(){
+    var id = <%=ticket._id%>
+    var capacity= $('#ticketNo').val();
+    var query = "_id="+id+"capacity"+capacity;
+    
+         //window.location.replace('/buses/thankyou');
+        console.log("deleted");
+    
+  });
+  
   </script>
   </body>
 </html>
