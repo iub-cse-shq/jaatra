@@ -98,16 +98,20 @@
      </br> 
      <p><i class="ti-wallet"></i> Pay with: </p>
      
-     <div class="imgContainer"  style="cursor:pointer">
-        <img src="/images/mastercard.png" data-toggle="modal" data-target="#exampleModalLong" height="100" width="150"/>
+     <div class="imgContainer">
+        <img src="/images/mastercard.png" data-toggle="modal" data-target="#exampleModalLong" height="75" width="100"/>
     
     </div>
-    <div class="imgContainer"  style="cursor:pointer">
-        <img class="middle-img" src="/images/visa.png" data-toggle="modal" data-target="#exampleModalLong" height="100" width="150"/>
+    <div class="imgContainer">
+        <img class="middle-img" src="/images/visa.png" data-toggle="modal" data-target="#exampleModalLong" height="75" width="100"/>
        
     </div>
-    <div class="imgContainer" style="cursor:pointer">
-         <img src="/images/bkash.png" data-toggle="modal" data-target="#bKash" height="100" width="150"/>
+    <div class="imgContainer">
+         <img src="/images/bkash.png" data-toggle="modal" data-target="#bKash" height="75" width="100"/>
+      
+    </div>
+    <div class="imgContainer">
+         <img src="/images/Rocket.png" data-toggle="modal" data-target="#Rocket" height="75" width="100"/>
       
     </div>
      
@@ -202,7 +206,41 @@
             </div>
             <div class="col-sm-6" >
                </br>
-               <a href="/tickets/success" class="btn btn-primary btn-lg btn-block" id="pay">Pay</a>
+               <a href="/tickets/success" class="btn btn-primary btn-lg btn-block">Submit Reference Code</a>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="Rocket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Rocket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="/images/RocketModal.png" data-toggle="modal" height="300" width="550"/>
+        <p>1. Follow the instructions given in the above picture</p>
+        <p>2. Submit the Reference code below</p>
+         <div class="form-row">
+             <div class="col-sm-6" >
+               </br>
+               <input type="text" class="form-control" id="cardCCV" placeholder="">
+            </div>
+            <div class="col-sm-6" >
+               </br>
+               <a href="/tickets/success" class="btn btn-primary btn-lg btn-block">Submit Reference Code</a>
             </div>
           </div>
       </div>
@@ -217,9 +255,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
   
 <% include ../common/footer.ejs %>
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  <!--<script src="/lib/jquery/dist/jquery.min.js"></script>--> 
   <script src="/vendor/ejs_production.js"></script>
   <script>
     $('#myModal').on('shown.bs.modal', function () {
@@ -234,18 +282,6 @@
       console.log(qty);
       document.getElementById('ticketTotal').innerHTML = <%=ticket.ticketPrice%>* qty + 20 ;
 });
-  </script>
-  <script> 
-  $("#pay").click(function(){
-    var id = <%=ticket._id%>
-    var capacity= $('#ticketNo').val();
-    var query = "_id="+id+"capacity"+capacity;
-    
-         //window.location.replace('/buses/thankyou');
-        console.log("deleted");
-    
-  });
-  
   </script>
   </body>
 </html>
