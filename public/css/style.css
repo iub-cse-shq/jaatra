@@ -16,7 +16,20 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  background: #fff;
+  background: #e9ebee;
+}
+
+
+
+#gtco-header {
+  background: url("https://i0.wp.com/agdits.com.bd/wp-content/uploads/2015/12/Dhaka.original.13483-min-min-min.jpg");
+ 
+  padding-bottom: 10%;
+  background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
 }
 
 #page {
@@ -113,6 +126,7 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 0;
   text-transform: uppercase;
   font-weight: bold;
+
 }
 .gtco-nav #gtco-logo em {
   color: #17B794;
@@ -122,6 +136,7 @@ h1, h2, h3, h4, h5, h6, figure {
     display: none;
   }
 }
+
 .gtco-nav ul {
   padding: 0;
   margin: .4em 0 0 0;
@@ -150,12 +165,19 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #33a3bd;
   
 }
+
+
+
 .gtco-nav ul li a:hover {
   font-weight: bolder;
 }
 .gtco-nav ul li a:hover, .gtco-nav ul li a:active {
   color: red;
 }
+
+
+
+
 .gtco-nav ul li.has-dropdown {
   position: relative;
 }
@@ -818,7 +840,7 @@ h1, h2, h3, h4, h5, h6, figure {
 form label {
   font-weight: normal !important;
 }
-
+/*
 #gtco-header {
   background: #3dcdbc;
   background: -moz-linear-gradient(left, #3dcdbc 0%, #33a1bd 100%);
@@ -829,6 +851,7 @@ form label {
   background: linear-gradient(to right, #3dcdbc 0%, #33a1bd 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3dcdbc', endColorstr='#33a1bd', GradientType=1 );
 }
+*/
 #gtco-header p {
   color: #d3f1ed;
   font-size: 20px;
