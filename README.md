@@ -19,21 +19,21 @@ Homepage -
 
 ![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/JaatraHome.PNG "Home Page Image")
 
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/JaatraHomeTwo.PNG "Home Page Image")
 
-<img src="/images/JaatraHomeTwo.PNG" alt="Jaatra Logo">
 
 Ticket Search -
-<img src="/images/ticketSearch.PNG" alt="Jaatra Logo">
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/jaatraticketSearch.PNG "Ticket Search")
 
 Customer Information-
-<img src="/images/customerInfoPage.PNG" alt="Jaatra Logo">
-
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/customerInfoPage.PNG "Customer Information Page")
 
 About Section-
-<img src="/images/Developers.PNG" alt="Jaatra Logo">
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/JaatraAbout.PNG "About Section")
 
 Contact Section-
-<img src="/images/jaatraContact.PNG" alt="Jaatra Logo">
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/jaatraContact.PNG "Contact")
+
 
 
 **How to set up the code**
