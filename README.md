@@ -11,7 +11,8 @@ We will also be integrating cash on delivery payment service in the near future.
 <img src="/images/JaatraLOGO.jpg" alt="Jaatra Logo">
 
 Admin Sign In-
-<img src="/images/signin.PNG" alt="Jaatra Logo">
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/signIn.PNG "Signin View")
+
 
 Homepage -
 <img src="/images/JaatraHome.PNG" alt="Jaatra Logo">
