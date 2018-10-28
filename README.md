@@ -8,14 +8,18 @@ Project Introduction -
 We have connected with over 20 bus enterprises all over Bangladesh to provide you with tickets at your doorstep.
 'J A A T R A' offers you the option to pay through your VISA, mastercard and bkash account! 
 We will also be integrating cash on delivery payment service in the near future.
-<img src="/images/JaatraLOGO.jpg" alt="Jaatra Logo">
+
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/jaatraLOGO.jpg "jaatraLOGO")
 
 Admin Sign In-
 ![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/signIn.PNG "Signin View")
 
 
 Homepage -
-<img src="/images/JaatraHome.PNG" alt="Jaatra Logo">
+
+![alt text](https://github.com/iub-cse-shq/jaatra/blob/master/public/images/JaatraHome.PNG "Home Page Image")
+
+
 <img src="/images/JaatraHomeTwo.PNG" alt="Jaatra Logo">
 
 Ticket Search -
